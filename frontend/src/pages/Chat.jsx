@@ -98,6 +98,7 @@ const ChatPage = () => {
                     </motion.button>
                   ))}
                 </div>
+              </div>
             </motion.div>
           ) : (
             <div className="space-y-4 pb-6">

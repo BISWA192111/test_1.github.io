@@ -11,6 +11,9 @@ import healthRoutes from './routes/healthRoutes.js';
 
 const app = express();
 
+// Trust proxy - Required for rate limiting behind Render proxy
+app.set('trust proxy', 1);
+
 // Middleware - Security
 app.use(helmet());
 

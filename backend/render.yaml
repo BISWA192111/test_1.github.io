@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: bars-ai-backend
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node src/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+    healthCheckPath: /api/health

@@ -41,7 +41,7 @@ const ChatPage = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col overflow-hidden bg-gray-900">
+    <div className="flex min-h-[calc(100dvh-4rem)] flex-col overflow-hidden bg-gray-900">
       <Toaster position="top-right" />
 
       {/* Header */}

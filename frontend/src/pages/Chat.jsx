@@ -7,11 +7,14 @@ import { Shield, MessageCircle, Zap } from 'lucide-react';
 
 const ChatPage = () => {
   const { messages, isLoading, error, sendMessage } = useChat();
-  const messagesEndRef = useRef(null);
   const messagesContainerRef = useRef(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => {
+      if (messagesContainerRef.current) {
+        messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
+      }
+    }, 0);
   };
 
   useEffect(() => {
@@ -119,7 +122,6 @@ const ChatPage = () => {
                 </div>
               </motion.div>
             )}
-            <div ref={messagesEndRef} />
           </div>
         )}
       </div>

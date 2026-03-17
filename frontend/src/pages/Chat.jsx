@@ -68,13 +68,12 @@ const ChatPage = () => {
         ref={messagesContainerRef}
         className="flex-1 overflow-y-auto bg-gray-900 px-4 md:px-6 pt-6"
       >
-        <div className="flex flex-col h-full">
-          {messages.length === 0 ? (
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="flex-1 flex flex-col items-center justify-center"
-            >
+        {messages.length === 0 ? (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex-1 flex flex-col items-center justify-center min-h-full"
+          >
               <div className="text-center max-w-2xl">
                 <div className="bg-blue-600/20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                   <MessageCircle className="text-blue-400" size={48} />
@@ -99,7 +98,6 @@ const ChatPage = () => {
                     </motion.button>
                   ))}
                 </div>
-              </div>
             </motion.div>
           ) : (
             <div className="space-y-4 pb-6">
@@ -127,7 +125,6 @@ const ChatPage = () => {
               )}
             </div>
           )}
-        </div>
       </div>
 
       {/* Input Section */}
